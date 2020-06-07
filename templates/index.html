@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TweePoll: Live Twitter Insights</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Welcome to TweePoll!">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/TweePoll_homestyle.css') }}">
+  </head>
+
+  <body>
+    <!-- unclear if data viz should be preloaded -->
+    <h1 class="Neue">TweePoll</h1>
+    <h4 class="Neue">Real time data visualizations of Twitter politics</h4>
+    <br/>
+    <hr/>
+    <br/><br/><br/>
+    <h4 class="Neue">Type in a keyword or hashtag to track</h4>
+    <form class="userinput" method="POST">
+      <input name="variable">
+      <input type="submit">
+    </form>
+  </body>
+
+</html>

@@ -3,9 +3,11 @@ from textwrap import TextWrapper
 import config
 
 class MyStreamListener(tweepy.StreamListener):
+	def __init__(self, api=None):
+		super(MyStreamListener, self).__init__()
+		self.num_tweets = 0
 
 	def on_status(self, status):
-		#print(status.text)
 		status_wrapper = TextWrapper(width=140, initial_indent='', subsequent_indent='')
 		try:
 			my_dict = dict()
@@ -20,16 +22,27 @@ class MyStreamListener(tweepy.StreamListener):
 			my_dict['createdAt'] = status.created_at
 			my_dict['messageId'] = status.id
 			print(my_dict)
+
+			#sets upper bound of tweets to grab (low for testing purposes)
+			self.num_tweets += 1
+			if self.num_tweets < 20:
+				return(True)
+			else:
+				return(False)
 			
 		except:
 			pass
 
-if __name__ == '__main__':
-	search = "protest"
-	auth = tweepy.auth.OAuthHandler(config.ckey, config.csecret)
-	auth.set_access_token(config.atoken, config.asecret)
-	api = tweepy.API(auth)
+	def main(self, regex):
+		search = regex
+		auth = tweepy.auth.OAuthHandler(config.ckey, config.csecret)
+		auth.set_access_token(config.atoken, config.asecret)
+		api = tweepy.API(auth)
 
-	tweepoll = MyStreamListener()
-	stream = tweepy.Stream(auth=api.auth, listener=tweepoll)
-	stream.filter(track = [search])
+		tweepoll = MyStreamListener()
+		stream = tweepy.Stream(auth=api.auth, listener=tweepoll)
+		stream.filter(track = [search])
+
+
+#if __name__ == '__main__':
+	#MyStreamListener().main(regex="protest")

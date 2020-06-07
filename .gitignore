@@ -130,3 +130,5 @@ dmypy.json
 
 # project specific files
 config.py
+config
+TweePoll_API.sublime-workspace

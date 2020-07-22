@@ -10,13 +10,11 @@ from time import sleep
 import threading
 from threading import Thread, Event, Lock
 import json
-import TweePoll_API_nostream
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socket = SocketIO(app, async_mode=None, logger=True, engineio_logger=True)
 streamer = TweePoll_API_single.MyStreamListener()
-streamer2 = TweePoll_API_nostream.getTweet()
 thread = None
 thread_lock = Lock()
 
@@ -25,8 +23,6 @@ def background_thread():
 	while True:
 		socket.sleep(10)
 		output = streamer.main(v + " @realDonaldTrump", v + " @JoeBiden")
-		#print(output)
-		#x = streamer2.main(v)
 		count += 1
 		socket.emit('my_response',
 			{'data': output, 'count': count},

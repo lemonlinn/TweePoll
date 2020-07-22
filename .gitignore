@@ -132,3 +132,10 @@ dmypy.json
 config.py
 config
 TweePoll_API.sublime-workspace
+TweePoll_API.py
+TweePoll_API_nostream.py
+TweePoll_NLP.py
+TweePoll_Server.py
+/static/js/application.js
+/static/js/indexjs.js
+/static/js/dataviz.js

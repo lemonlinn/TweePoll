@@ -17,26 +17,14 @@ class MyStreamListener(tweepy.StreamListener):
 		#self.printDF = None
 
 	def on_status(self, status):
-		# status_wrapper = TextWrapper(width=140, initial_indent='', subsequent_indent='')
-		# try:
-		# 	if hasattr(status, "retweeted_status"):  # Check if Retweet
-		# 		try:
-		# 			tweet = status_wrapper.fill(status.retweeted_status.extended_tweet["full_text"].encode('utf-8'))
-		# 		except AttributeError:
-		# 			tweet = status_wrapper.fill(status.retweeted_status.text.encode('utf-8'))
-		# 	else:
-		# 		try:
-		# 			tweet = status_wrapper.fill(status.extended_tweet["full_text"].encode('utf-8'))
-		# 		except AttributeError:
-		# 			tweet = status_wrapper.fill(status.text.encode('utf-8'))
-
 		try:
-			if hasattr(status, "retweeted_status"):  # Check if Retweet
-				try:
-					tweet = status.retweeted_status.extended_tweet["full_text"]
-				except AttributeError:
-					tweet = status.retweeted_status.text
-			else:
+			#if hasattr(status, "retweeted_status"):  # Check if Retweet
+			#	try:
+			#		tweet = status.retweeted_status.extended_tweet["full_text"]
+			#	except AttributeError:
+			#		tweet = status.retweeted_status.text
+			#else:
+			if not hasattr(status, "retweeted_status"):
 				try:
 					tweet = status.extended_tweet["full_text"]
 				except AttributeError:

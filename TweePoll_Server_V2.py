@@ -20,13 +20,23 @@ thread_lock = Lock()
 
 def background_thread():
 	count = 0
+	mytweets = []
 	while True:
-		socket.sleep(10)
+		#socket.sleep(10)
+		socket.sleep(0)
 		output = streamer.main(v + " @realDonaldTrump", v + " @JoeBiden")
-		count += 1
-		socket.emit('my_response',
-			{'data': output, 'count': count},
-			namespace='/output')
+		# count += 1
+		# socket.emit('my_response',
+		# 	{'data': output, 'count': count},
+		# 	namespace='/output')
+		if output not in mytweets:
+			socket.emit('my_response',
+				{'data': output, 'count': count},
+				namespace='/output')
+			mytweets.append(output)
+			count += 1
+		else:
+			pass
 
 @app.route('/', methods = ['GET','POST'])
 def index():

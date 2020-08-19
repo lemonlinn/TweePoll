@@ -38,7 +38,7 @@ class MyStreamListener(tweepy.StreamListener):
 
 			global printDF
 			printDF = json.dumps({"tweet":tweet, "clean":clean,
-				"prez":prez, "NRCEmo":NRCemo, "time":time, "username":user})
+				"prez":prez, "NRCemo":NRCemo, "time":time, "username":user})
 
 			#print(printDF)
 			#yield(printDF)

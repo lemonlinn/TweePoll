@@ -1,0 +1,77 @@
+/*TweePoll title*/
+body {
+  text-align: center;
+  align: center;
+}
+h1.Neue {
+  color: rgb(0, 172, 237);
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  margin-bottom: 0px;
+  margin-top: 5px;
+  font-size: 70px;
+}
+/*TweePoll subtitle*/
+h4.Neue {
+  color: rgb(0, 132, 180);
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  margin-top: 0px;
+}
+/*TweePoll secondary title*/
+h3.Neue {
+  color: rgb(0, 0, 0);
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  padding-bottom: 10px;
+}
+
+/*Search Box*/
+.search-box {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(225, 232, 237);
+  height: 40px;
+  border-radius: 40px;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 350px;
+}
+/*Search button and icon*/
+.search-btn {
+  position: absolute;
+  top: 0%;
+  left: 90%;
+  color: rgb(225, 232, 237);
+  float: right;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: rgb(225, 232, 237);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-btn>i {
+  color: rgb(101, 119, 134);
+  font-size: 30px;
+}
+/*Search text form*/
+.search-txt {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  color: rgb(101, 119, 134);
+  font-size: 14px;
+  width: 300px;
+  padding-left: 10px;
+}
+
+.search-txt:focus {
+  border: none;
+  background: none;
+  outline: none;
+  background-color: rgb(225, 232, 237);
+  color: rgb(101, 119, 134);
+}

@@ -58,3 +58,4 @@ I'm using this project to build my web development skills, as well as my underst
 6. Leaflet of USA with lat/lon twitter data mapped on
 7. A heatmap of some kind
 8. Add a methodology/explanation section at the bottom
+9. Add a way to 'jump' the viewer down the webpage so all data visualizations are perfectly framed in the browser
